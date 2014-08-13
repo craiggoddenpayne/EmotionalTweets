@@ -1,5 +1,4 @@
-﻿using System;
-using Autofac;
+﻿using Autofac;
 using EmotionalTweets.Helpers;
 using EmotionalTweets.RequestFactory;
 using EmotionalTweets.ServiceAdapters;
@@ -13,8 +12,10 @@ namespace EmotionalTweets
         public static void Register()
         {
             var container = new ContainerBuilder();
-            //container.Register<IObjectSerializer>(x => new ObjectSerializer());
-            
+            container.Register<IObjectSerializer>(x => new ObjectSerializer());
+
+            container.Register<IEmotionalTweetsApplication>(x => new EmotionalTweetsApplication());
+            container.Register<ISentimentApiAdapter>(x => new SentimentApiAdapter());
             container.Register<ITwitterApiAdapter>(x => new TwitterApiAdapter(
                 x.Resolve<ITwitterApiRequestFactory>(),
                 x.Resolve<IHttpHelper>(),
