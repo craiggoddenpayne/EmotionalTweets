@@ -34,9 +34,11 @@ namespace EmotionalTweets.ServiceAdapters
             return await _objectSerializer.DeserializeJson<TwitterApplicationAuthentication>(webResponse);
         }
 
-        public Task<TweetCollection> Search(string query, string authenticationToken)
+        public async Task<TweetCollection> Search(string query, string authenticationToken)
         {
-            throw new System.NotImplementedException();
+            var request = _twitterApiRequestFactory.CreateSearchTweetRequest();
+            var webResponse = await _webRequestHelper.GetResponse(request);
+            return await _objectSerializer.DeserializeJson<TweetCollection>(webResponse);
         }
     }
 }

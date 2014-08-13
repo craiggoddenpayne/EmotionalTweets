@@ -31,10 +31,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Builders\Builder.cs" />
+    <Compile Include="Builders\TweetCollectionBuilder.cs" />
     <Compile Include="Builders\TwitterApplicationAuthenticationBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceAdapterTests\TwitterApiAdapterTests\TwitterServiceAdapterTests.cs" />
     <Compile Include="ServiceAdapterTests\TwitterApiAdapterTests\WhenCallingLogin.cs" />
+    <Compile Include="ServiceAdapterTests\TwitterApiAdapterTests\WhenCallingSearchTweets.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.1.0.6186\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.0.6186\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" />
