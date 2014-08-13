@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmotionalTweets", "Library\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmotionalTweets.Android", "Android\EmotionalTweets.Android.csproj", "{7C517A28-2335-4B0A-B57E-4E14F3CDCE01}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C6A41C5A-6032-4FF1-90FC-2E0448460FD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmotionalTweets.Tests", "Tests\EmotionalTweets.Tests\EmotionalTweets.Tests.csproj", "{F7405C78-23CC-49B1-B43F-1786456CEA6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,8 +23,15 @@ Global
 		{7C517A28-2335-4B0A-B57E-4E14F3CDCE01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C517A28-2335-4B0A-B57E-4E14F3CDCE01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C517A28-2335-4B0A-B57E-4E14F3CDCE01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7405C78-23CC-49B1-B43F-1786456CEA6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7405C78-23CC-49B1-B43F-1786456CEA6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7405C78-23CC-49B1-B43F-1786456CEA6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7405C78-23CC-49B1-B43F-1786456CEA6C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F7405C78-23CC-49B1-B43F-1786456CEA6C} = {C6A41C5A-6032-4FF1-90FC-2E0448460FD5}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = EmotionalTweets.csproj
+		StartupItem = Library\EmotionalTweets.csproj
 	EndGlobalSection
 EndGlobal
