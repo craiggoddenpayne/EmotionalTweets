@@ -32,7 +32,12 @@
   <ItemGroup>
     <Compile Include="DataContracts\TweetCollection.cs" />
     <Compile Include="DataContracts\TwitterApplicationAuthentication.cs" />
+    <Compile Include="Helpers\IObjectSerializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestFactory\ITwitterApiRequestFactory.cs" />
+    <Compile Include="RequestFactory\TwitterApiRequestFactory.cs" />
+    <Compile Include="Helpers\HttpHelper.cs" />
+    <Compile Include="Helpers\IHttpHelper.cs" />
     <Compile Include="ServiceAdapters\ITwitterApiAdapter.cs" />
     <Compile Include="ServiceAdapters\TwitterApiAdapter.cs" />
   </ItemGroup>
