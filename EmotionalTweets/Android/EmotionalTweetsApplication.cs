@@ -1,8 +1,9 @@
 ﻿using System;
 using Android.App;
 using Android.Runtime;
+using EmotionalTweets;
 
-namespace EmotionalTweets.Android
+namespace EmotionalTweetsAndroid
 {
     [Application(Debuggable = true, Label = "Emotional Tweets")]
     public class EmotionalTweetsApplication : Application

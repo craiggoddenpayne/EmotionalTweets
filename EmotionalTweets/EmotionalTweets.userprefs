@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Tests\EmotionalTweets.Tests\Test.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Android\EmotionalTweetsAndroid\MainActivity.cs">
     <Files>
-      <File FileName="Tests\EmotionalTweets.Tests\Test.cs" Line="7" Column="7" />
+      <File FileName="Android\EmotionalTweetsAndroid\Resources\Resource.designer.cs" Line="24" Column="24" />
+      <File FileName="Android\EmotionalTweetsAndroid\MainActivity.cs" Line="56" Column="56" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("EmotionalTweets.Android.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("EmotionalTweetsAndroid.Resource", IsApplication=true)]
 
-namespace EmotionalTweets.Android
+namespace EmotionalTweetsAndroid
 {
 	
 	
@@ -64,7 +64,22 @@ namespace EmotionalTweets.Android
 		{
 			
 			// aapt resource value: 0x7f060000
-			public const int myButton = 2131099648;
+			public const int Heading = 2131099648;
+			
+			// aapt resource value: 0x7f060004
+			public const int Progress = 2131099652;
+			
+			// aapt resource value: 0x7f060002
+			public const int SearchField = 2131099650;
+			
+			// aapt resource value: 0x7f060003
+			public const int Submit = 2131099651;
+			
+			// aapt resource value: 0x7f060001
+			public const int listView1 = 2131099649;
+			
+			// aapt resource value: 0x7f060005
+			public const int myButton = 2131099653;
 			
 			static Id()
 			{
@@ -80,7 +95,10 @@ namespace EmotionalTweets.Android
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int EmotionalTweetsSearch = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int Main = 2130903041;
 			
 			static Layout()
 			{

@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
+# Visual Studio 2012
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmotionalTweets", "Library\EmotionalTweets.csproj", "{103A65BE-BF74-40CB-9B47-70F8354B2B0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmotionalTweets.Android", "Android\EmotionalTweets.Android.csproj", "{7C517A28-2335-4B0A-B57E-4E14F3CDCE01}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C6A41C5A-6032-4FF1-90FC-2E0448460FD5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmotionalTweetsTests", "Tests\EmotionalTweetsTests\EmotionalTweetsTests.csproj", "{0B175FC6-418B-4BAF-B0C3-4209AE10C367}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmotionalTweetsAndroid", "Android\EmotionalTweetsAndroid.csproj", "{27AF5DB8-2161-4C40-B1CA-C48D98E94D91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,27 +17,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{103A65BE-BF74-40CB-9B47-70F8354B2B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{103A65BE-BF74-40CB-9B47-70F8354B2B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{103A65BE-BF74-40CB-9B47-70F8354B2B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{103A65BE-BF74-40CB-9B47-70F8354B2B0F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7C517A28-2335-4B0A-B57E-4E14F3CDCE01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C517A28-2335-4B0A-B57E-4E14F3CDCE01}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C517A28-2335-4B0A-B57E-4E14F3CDCE01}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{7C517A28-2335-4B0A-B57E-4E14F3CDCE01}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C517A28-2335-4B0A-B57E-4E14F3CDCE01}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0B175FC6-418B-4BAF-B0C3-4209AE10C367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0B175FC6-418B-4BAF-B0C3-4209AE10C367}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B175FC6-418B-4BAF-B0C3-4209AE10C367}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B175FC6-418B-4BAF-B0C3-4209AE10C367}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
+		{103A65BE-BF74-40CB-9B47-70F8354B2B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{103A65BE-BF74-40CB-9B47-70F8354B2B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{103A65BE-BF74-40CB-9B47-70F8354B2B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{103A65BE-BF74-40CB-9B47-70F8354B2B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27AF5DB8-2161-4C40-B1CA-C48D98E94D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27AF5DB8-2161-4C40-B1CA-C48D98E94D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27AF5DB8-2161-4C40-B1CA-C48D98E94D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27AF5DB8-2161-4C40-B1CA-C48D98E94D91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0B175FC6-418B-4BAF-B0C3-4209AE10C367} = {C6A41C5A-6032-4FF1-90FC-2E0448460FD5}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Library\EmotionalTweets.csproj
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
