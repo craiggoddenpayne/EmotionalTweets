@@ -35,9 +35,12 @@
     <Compile Include="Builders\TweetCollectionBuilder.cs" />
     <Compile Include="Builders\TwitterAuthenticationBuilder.cs" />
     <Compile Include="Builders\TwitterUserBuilder.cs" />
-    <Compile Include="EmotionalTweetsController\EmotionalTweetsControllerTests.cs" />
-    <Compile Include="EmotionalTweetsController\WhenCallingSearchTweetsWithSentiment.cs" />
+    <Compile Include="EmotionalTweetsControllerTests\EmotionalTweetsControllerTest.cs" />
+    <Compile Include="EmotionalTweetsControllerTests\WhenCallingSearchTweetsWithSentiment.cs" />
+    <Compile Include="IntegrationTests\TwitterApiAdapterTests\TwitterApiLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestFactoriesTests\TwitterApiRequestFactoryTests\TwitterApiRequestFactoryTest.cs" />
+    <Compile Include="RequestFactoriesTests\TwitterApiRequestFactoryTests\WhenCallingCreateLoginRequest.cs" />
     <Compile Include="ServiceAdapterTests\TwitterApiAdapterTests\TwitterServiceAdapterTests.cs" />
     <Compile Include="ServiceAdapterTests\TwitterApiAdapterTests\WhenCallingLogin.cs" />
     <Compile Include="ServiceAdapterTests\TwitterApiAdapterTests\WhenCallingSearchTweets.cs" />
