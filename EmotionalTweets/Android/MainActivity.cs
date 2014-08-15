@@ -1,6 +1,5 @@
 ﻿using System;
 using Android.App;
-using Android.Content;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
@@ -35,6 +34,9 @@ namespace EmotionalTweetsAndroid
 	    {
 	        _progress.Visibility = ViewStates.Visible;
 	        _submit.Enabled = false;
+
+            var sentimentTweets = await _controller.SearchTweetsWithSentiment(_searchField.Text);
+	        EmotionalTweetsApplication.ApplicationState.LastSearch = sentimentTweets;
 
 	        RunOnUiThread(() =>
 	        {
