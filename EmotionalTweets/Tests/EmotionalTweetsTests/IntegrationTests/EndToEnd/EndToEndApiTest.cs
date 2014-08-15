@@ -1,9 +1,5 @@
-﻿using EmotionalTweets.DataContracts;
-using EmotionalTweets.DataContracts.Twitter;
-using EmotionalTweets.Helpers;
-using EmotionalTweets.Mappers;
-using EmotionalTweets.RequestFactory;
-using EmotionalTweets.ServiceAdapters;
+﻿using EmotionalTweets;
+using EmotionalTweets.DataContracts;
 using NUnit.Framework;
 
 namespace EmotionalTweetsTests.IntegrationTests.EndToEnd
@@ -12,34 +8,22 @@ namespace EmotionalTweetsTests.IntegrationTests.EndToEnd
 
     public class EndToEndApiTests
     {
-        private ITwitterApiAdapter _twitterApiAdapter;
-        private TweetCollection _tweets;
-        private SentimentApiAdapter _sentimentApiAdapter;
         private SentimentTweetCollection _sentimentTweets;
 
         [SetUp]
         public void Setup()
         {
-            _twitterApiAdapter = new TwitterApiAdapter(
-                new TwitterApiRequestFactory(), new HttpHelper(), new ObjectSerializer());
+            Ioc.Register();
+            var controller = Ioc.Resolve<IEmotionalTweetsController>();
 
-            var login = _twitterApiAdapter.Login().Result;
-            _tweets = _twitterApiAdapter.Search("hello", login).Result;
-
-            _sentimentApiAdapter = new SentimentApiAdapter(
-                new ObjectSerializer(), new SentimentRequestFactory(),
-                new HttpHelper(), new SentimentTweetMapper());
-
-            _sentimentTweets = _sentimentApiAdapter.GetSentimentForTweets(_tweets).Result;
+            _sentimentTweets = controller.SearchTweetsWithSentiment("hello").Result;
         }
 
 
         [Test]
         public void ItShouldReturnSomeResults()
         {
-            Assert.That(_tweets.statuses.Length, Is.GreaterThan(0));
-            Assert.That(_tweets.statuses.Length, Is.EqualTo(_sentimentTweets.Count));
-
-        }    
+            Assert.That(_sentimentTweets.Count, Is.GreaterThan(0));
+        }
     }
 }
