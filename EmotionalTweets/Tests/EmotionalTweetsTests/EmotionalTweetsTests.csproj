@@ -42,8 +42,10 @@
     <Compile Include="HelperTests\ObjectSerializerTests\ObjectSerializerTest.cs" />
     <Compile Include="HelperTests\ObjectSerializerTests\WhenCallingDeserialize.cs" />
     <Compile Include="HelperTests\ObjectSerializerTests\WhenCallingDeserializeWithInvalidData.cs" />
-    <Compile Include="IntegrationTests\TwitterApiAdapterTests\TwitterApiLogin.cs" />
+    <Compile Include="IntegrationTests\EndToEnd\EndToEndApiTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestFactoriesTests\SentimentRequestFactoryTests\SentimentRequestFactoryTest.cs" />
+    <Compile Include="RequestFactoriesTests\SentimentRequestFactoryTests\WhenCallingCreateSentimentForTweetRequest.cs" />
     <Compile Include="RequestFactoriesTests\TwitterApiRequestFactoryTests\TwitterApiRequestFactoryTest.cs" />
     <Compile Include="RequestFactoriesTests\TwitterApiRequestFactoryTests\WhenCallingCreateLoginRequest.cs" />
     <Compile Include="RequestFactoriesTests\TwitterApiRequestFactoryTests\WhenCallingCreateSearchTweetsRequest.cs" />
