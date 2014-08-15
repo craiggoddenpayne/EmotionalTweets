@@ -1,11 +1,9 @@
-﻿using System.Threading.Tasks;
-using EmotionalTweets.DataContracts;
+﻿using EmotionalTweets.DataContracts;
 using EmotionalTweets.DataContracts.Twitter;
 using EmotionalTweets.Helpers;
 using EmotionalTweets.Mappers;
 using EmotionalTweets.RequestFactory;
 using EmotionalTweets.ServiceAdapters;
-using Moq;
 using NUnit.Framework;
 
 namespace EmotionalTweetsTests.IntegrationTests.EndToEnd

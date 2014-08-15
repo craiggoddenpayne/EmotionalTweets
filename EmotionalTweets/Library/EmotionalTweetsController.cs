@@ -7,17 +7,20 @@ namespace EmotionalTweets
     public class EmotionalTweetsController : IEmotionalTweetsController
     {
         private readonly ITwitterApiAdapter _twitterApiAdapter;
+        private readonly ISentimentApiAdapter _sentimentApiAdapter;
 
-        public EmotionalTweetsController(ITwitterApiAdapter twitterApiAdapter)
+        public EmotionalTweetsController(ITwitterApiAdapter twitterApiAdapter,
+            ISentimentApiAdapter sentimentApiAdapter)
         {
             _twitterApiAdapter = twitterApiAdapter;
+            _sentimentApiAdapter = sentimentApiAdapter;
         }
 
         public async Task<SentimentTweetCollection> SearchTweetsWithSentiment(string searchQuery)
         {
-            var bearerToken = await _twitterApiAdapter.Login();
-            var tweetResults = await _twitterApiAdapter.Search(searchQuery, bearerToken);
-            return null;
+            var bearerToken = _twitterApiAdapter.Login();
+            var tweetResults = _twitterApiAdapter.Search(searchQuery, await bearerToken);
+            return await _sentimentApiAdapter.GetSentimentForTweets(await tweetResults);
         }
     }
 }

@@ -13,6 +13,7 @@ namespace EmotionalTweetsTests.EmotionalTweetsControllerTests
         private string _query;
         private TwitterAuthentication _twitterAuthorisation;
         private TweetCollection _tweetResults;
+        private SentimentTweetCollection _sentimentTweetCollection;
 
         [SetUp]
         public void Setup()
@@ -30,6 +31,11 @@ namespace EmotionalTweetsTests.EmotionalTweetsControllerTests
                 .Setup(x => x.Search(_query, _twitterAuthorisation))
                 .Returns(Task.FromResult(_tweetResults));
 
+            _sentimentTweetCollection = SentimentTweetCollectionBuilder.Build.AnInstance();
+            SentimentApiAdapter
+                .Setup(x => x.GetSentimentForTweets(_tweetResults))
+                .Returns(Task.FromResult(_sentimentTweetCollection));
+
             _result = Controller.SearchTweetsWithSentiment(_query).Result;
         }
 
@@ -43,6 +49,18 @@ namespace EmotionalTweetsTests.EmotionalTweetsControllerTests
         public void ItShouldSearchTwitterToGetTweets()
         {
             TwitterApiAdapter.Verify(x => x.Search(_query, _twitterAuthorisation));
+        }
+
+        [Test]
+        public void ItShouldCallSentimentService()
+        {
+            SentimentApiAdapter.Verify(x => x.GetSentimentForTweets(_tweetResults));
+        }
+
+        [Test]
+        public void ItShouldReturnResult()
+        {
+            Assert.That(_result, Is.SameAs(_sentimentTweetCollection));
         }
     }
 }

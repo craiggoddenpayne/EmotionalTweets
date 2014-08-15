@@ -8,12 +8,14 @@ namespace EmotionalTweetsTests.EmotionalTweetsControllerTests
     {
         public IEmotionalTweetsController Controller { get; set; }
         public Mock<ITwitterApiAdapter> TwitterApiAdapter { get; set; }
+        public Mock<ISentimentApiAdapter> SentimentApiAdapter { get; set; }
         public void Initialise()
         {
             TwitterApiAdapter = new Mock<ITwitterApiAdapter>();
 
-            Controller = new EmotionalTweets.EmotionalTweetsController(
-                TwitterApiAdapter.Object);
+            Controller = new EmotionalTweetsController(
+                TwitterApiAdapter.Object,
+                SentimentApiAdapter.Object);
         }   
     }
 }
