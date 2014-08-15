@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using EmotionalTweets.DataContracts.Twitter;
 
 namespace EmotionalTweets.RequestFactory
 {
@@ -15,9 +16,12 @@ namespace EmotionalTweets.RequestFactory
         }
 
 
-        public HttpWebRequest CreateSearchTweetRequest()
+        public HttpWebRequest CreateSearchTweetRequest(string query, TwitterAuthentication authentication)
         {
-            throw new System.NotImplementedException();
+            var request = WebRequest.Create("https://api.twitter.com/1.1/search/tweets.json?q=" + WebUtility.UrlEncode(query)) as HttpWebRequest;
+            request.Method = "GET";
+            request.Headers["Authorization"] = "Bearer " + authentication.access_token;
+            return request;
         }
     }
 }

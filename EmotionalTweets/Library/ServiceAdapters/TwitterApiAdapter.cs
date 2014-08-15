@@ -35,7 +35,7 @@ namespace EmotionalTweets.ServiceAdapters
 
         public async Task<TweetCollection> Search(string query, TwitterAuthentication authentication)
         {
-            var request = _twitterApiRequestFactory.CreateSearchTweetRequest();
+            var request = _twitterApiRequestFactory.CreateSearchTweetRequest(query, authentication);
             var webResponse = await _webRequestHelper.GetResponse(request);
             return await _objectSerializer.DeserializeJson<TweetCollection>(webResponse);
         }

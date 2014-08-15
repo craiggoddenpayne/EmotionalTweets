@@ -1,6 +1,5 @@
 ﻿using System.Net;
 using System.Threading.Tasks;
-using EmotionalTweets.DataContracts;
 using EmotionalTweets.DataContracts.Twitter;
 using EmotionalTweetsTests.Builders;
 using Moq;
@@ -28,7 +27,7 @@ namespace EmotionalTweetsTests.ServiceAdapterTests.TwitterApiAdapterTests
 
             _webRequest = new Mock<HttpWebRequest>();
             TwitterApiRequestFactory
-                .Setup(x => x.CreateSearchTweetRequest())
+                .Setup(x => x.CreateSearchTweetRequest(_query, _authToken))
                 .Returns(_webRequest.Object);
 
             _webResponse = new Mock<HttpWebResponse>();
@@ -47,7 +46,7 @@ namespace EmotionalTweetsTests.ServiceAdapterTests.TwitterApiAdapterTests
         [Test]
         public void ItShouldCreateWebRequest()
         {
-            TwitterApiRequestFactory.Verify(x => x.CreateSearchTweetRequest());
+            TwitterApiRequestFactory.Verify(x => x.CreateSearchTweetRequest(_query, _authToken));
         }
 
         [Test]
