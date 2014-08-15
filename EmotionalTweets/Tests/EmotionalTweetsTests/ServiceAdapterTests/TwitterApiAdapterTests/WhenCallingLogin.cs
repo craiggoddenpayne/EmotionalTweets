@@ -41,7 +41,7 @@ namespace EmotionalTweetsTests.ServiceAdapterTests.TwitterApiAdapterTests
             _authenticationResult = TwitterAuthenticationBuilder.Build.AnInstance();
             ObjectSerializer
                 .Setup(x => x.DeserializeJson<TwitterAuthentication>(_webResponse.Object))
-                .Returns(Task.FromResult(_authenticationResult));
+                .Returns(_authenticationResult);
 
             _result = TwitterApiAdapter.Login().Result;
         }

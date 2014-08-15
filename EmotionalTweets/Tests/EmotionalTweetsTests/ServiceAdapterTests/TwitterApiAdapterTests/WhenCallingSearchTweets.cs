@@ -38,7 +38,7 @@ namespace EmotionalTweetsTests.ServiceAdapterTests.TwitterApiAdapterTests
             _tweetCollection = TweetCollectionBuilder.Build.AnInstance();
             ObjectSerializer
                 .Setup(x => x.DeserializeJson<TweetCollection>(_webResponse.Object))
-                .Returns(Task.FromResult(_tweetCollection));
+                .Returns(_tweetCollection);
 
             _result = TwitterApiAdapter.Search(_query, _authToken).Result;
         }

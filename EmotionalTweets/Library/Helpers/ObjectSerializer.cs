@@ -1,18 +1,30 @@
-﻿using System.Net;
-using System.Threading.Tasks;
+﻿using System.IO;
+using System.Net;
+using Newtonsoft.Json;
 
 namespace EmotionalTweets.Helpers
 {
     public class ObjectSerializer : IObjectSerializer
     {
-        public TResult DeserializeJson<TResult>(string serializedJson)
-        {
-            throw new System.NotImplementedException();
-        }
+        private readonly JsonSerializer _jsonSerializer;
 
-        public Task<TResult> DeserializeJson<TResult>(HttpWebResponse webResponse)
-        {
-            throw new System.NotImplementedException();
-        }
-    }
+		public ObjectSerializer ()
+		{
+		    _jsonSerializer = new JsonSerializer();
+		}
+
+        public TResult DeserializeJson<TResult> (string serializedJson)
+		{
+			return _jsonSerializer.Deserialize<TResult>(new JsonTextReader(new StringReader(serializedJson)));
+		}
+
+		public TResult DeserializeJson<TResult> (HttpWebResponse message)
+		{
+		    using (var responseStream = new StreamReader(message.GetResponseStream()))
+		    {
+		        var jsonObject = responseStream.ReadToEnd();
+		        return DeserializeJson<TResult>(jsonObject);
+		    }
+		}
+	}
 }

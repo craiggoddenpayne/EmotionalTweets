@@ -30,14 +30,14 @@ namespace EmotionalTweets.ServiceAdapters
             stream.Write(data, 0, data.Length);
             
             var webResponse = await _webRequestHelper.GetResponse(loginRequest);
-            return await _objectSerializer.DeserializeJson<TwitterAuthentication>(webResponse);
+            return _objectSerializer.DeserializeJson<TwitterAuthentication>(webResponse);
         }
 
         public async Task<TweetCollection> Search(string query, TwitterAuthentication authentication)
         {
             var request = _twitterApiRequestFactory.CreateSearchTweetRequest(query, authentication);
             var webResponse = await _webRequestHelper.GetResponse(request);
-            return await _objectSerializer.DeserializeJson<TweetCollection>(webResponse);
+            return _objectSerializer.DeserializeJson<TweetCollection>(webResponse);
         }
     }
 }
