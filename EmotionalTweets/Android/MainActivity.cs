@@ -1,5 +1,6 @@
 ﻿using System;
 using Android.App;
+using Android.Content;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
@@ -43,6 +44,10 @@ namespace EmotionalTweetsAndroid
 	            _progress.Visibility = ViewStates.Invisible;
 	            _submit.Enabled = true;
 	        });
+
+            var resultsActivity = new Intent(this, typeof(EmotionalTweetsResults));
+            StartActivity(resultsActivity);
+
 	    }
 	}
 }
