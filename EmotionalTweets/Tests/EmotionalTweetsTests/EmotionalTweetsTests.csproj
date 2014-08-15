@@ -31,8 +31,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Builders\Builder.cs" />
+    <Compile Include="Builders\TweetBuilder.cs" />
     <Compile Include="Builders\TweetCollectionBuilder.cs" />
-    <Compile Include="Builders\TwitterApplicationAuthenticationBuilder.cs" />
+    <Compile Include="Builders\TwitterAuthenticationBuilder.cs" />
+    <Compile Include="Builders\TwitterUserBuilder.cs" />
+    <Compile Include="EmotionalTweetsController\EmotionalTweetsControllerTests.cs" />
+    <Compile Include="EmotionalTweetsController\WhenCallingSearchTweetsWithSentiment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceAdapterTests\TwitterApiAdapterTests\TwitterServiceAdapterTests.cs" />
     <Compile Include="ServiceAdapterTests\TwitterApiAdapterTests\WhenCallingLogin.cs" />

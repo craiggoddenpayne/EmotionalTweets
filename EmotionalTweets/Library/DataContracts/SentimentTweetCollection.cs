@@ -1,4 +1,4 @@
-﻿namespace EmotionalTweets.ServiceAdapters
+﻿namespace EmotionalTweets.DataContracts
 {
     public class SentimentTweetCollection
     {

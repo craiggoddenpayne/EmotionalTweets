@@ -1,7 +1,6 @@
-﻿using System.IO;
-using System.Text;
+﻿using System.Text;
 using System.Threading.Tasks;
-using EmotionalTweets.DataContracts;
+using EmotionalTweets.DataContracts.Twitter;
 using EmotionalTweets.Helpers;
 using EmotionalTweets.RequestFactory;
 
@@ -22,7 +21,7 @@ namespace EmotionalTweets.ServiceAdapters
             _objectSerializer = objectSerializer;
         }
 
-        public async Task<TwitterApplicationAuthentication> Login()
+        public async Task<TwitterAuthentication> Login()
         {
             var loginRequest = _twitterApiRequestFactory.CreateLoginRequest();
 
@@ -31,10 +30,10 @@ namespace EmotionalTweets.ServiceAdapters
             stream.Write(data, 0, data.Length);
             
             var webResponse = await _webRequestHelper.GetResponse(loginRequest);
-            return await _objectSerializer.DeserializeJson<TwitterApplicationAuthentication>(webResponse);
+            return await _objectSerializer.DeserializeJson<TwitterAuthentication>(webResponse);
         }
 
-        public async Task<TweetCollection> Search(string query, string authenticationToken)
+        public async Task<TweetCollection> Search(string query, TwitterAuthentication authentication)
         {
             var request = _twitterApiRequestFactory.CreateSearchTweetRequest();
             var webResponse = await _webRequestHelper.GetResponse(request);

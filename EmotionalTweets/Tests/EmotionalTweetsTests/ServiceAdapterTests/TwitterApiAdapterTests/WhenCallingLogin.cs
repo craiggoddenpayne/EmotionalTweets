@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Net;
 using System.Threading.Tasks;
-using EmotionalTweets.DataContracts;
+using EmotionalTweets.DataContracts.Twitter;
 using EmotionalTweetsTests.Builders;
 using Moq;
 using NUnit.Framework;
@@ -14,8 +14,8 @@ namespace EmotionalTweetsTests.ServiceAdapterTests.TwitterApiAdapterTests
         private Mock<HttpWebRequest> _webRequest;
         private Stream _requestStream;
         private Mock<HttpWebResponse> _webResponse;
-        private TwitterApplicationAuthentication _authenticationResult;
-        private TwitterApplicationAuthentication _result;
+        private TwitterAuthentication _authenticationResult;
+        private TwitterAuthentication _result;
 
 
         [SetUp]
@@ -38,9 +38,9 @@ namespace EmotionalTweetsTests.ServiceAdapterTests.TwitterApiAdapterTests
                 .Setup(x => x.GetResponse(_webRequest.Object))
                 .Returns(Task.FromResult(_webResponse.Object));
 
-            _authenticationResult = TwitterApplicationAuthenticationBuilder.Build.AnInstance();
+            _authenticationResult = TwitterAuthenticationBuilder.Build.AnInstance();
             ObjectSerializer
-                .Setup(x => x.DeserializeJson<TwitterApplicationAuthentication>(_webResponse.Object))
+                .Setup(x => x.DeserializeJson<TwitterAuthentication>(_webResponse.Object))
                 .Returns(Task.FromResult(_authenticationResult));
 
             _result = TwitterApiAdapter.Login().Result;
@@ -73,7 +73,7 @@ namespace EmotionalTweetsTests.ServiceAdapterTests.TwitterApiAdapterTests
         [Test]
         public void ItShouldDeserializeWebResponse()
         {
-            ObjectSerializer.Verify(x => x.DeserializeJson<TwitterApplicationAuthentication>(_webResponse.Object));
+            ObjectSerializer.Verify(x => x.DeserializeJson<TwitterAuthentication>(_webResponse.Object));
         }
 
         [Test]

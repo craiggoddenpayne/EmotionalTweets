@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Threading.Tasks;
 using EmotionalTweets.DataContracts;
+using EmotionalTweets.DataContracts.Twitter;
 using EmotionalTweetsTests.Builders;
 using Moq;
 using NUnit.Framework;
@@ -12,7 +13,7 @@ namespace EmotionalTweetsTests.ServiceAdapterTests.TwitterApiAdapterTests
     {
         private TweetCollection _result;
         private string _query;
-        private string _authToken;
+        private TwitterAuthentication _authToken;
         private Mock<HttpWebRequest> _webRequest;
         private Mock<HttpWebResponse> _webResponse;
         private TweetCollection _tweetCollection;
@@ -23,7 +24,7 @@ namespace EmotionalTweetsTests.ServiceAdapterTests.TwitterApiAdapterTests
             Initialise();
 
             _query = "Search criteria";
-            _authToken = "TOKEN";
+            _authToken = TwitterAuthenticationBuilder.Build.AnInstance();
 
             _webRequest = new Mock<HttpWebRequest>();
             TwitterApiRequestFactory

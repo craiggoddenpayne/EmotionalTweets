@@ -1,11 +1,11 @@
 ﻿using System.Threading.Tasks;
-using EmotionalTweets.DataContracts;
+using EmotionalTweets.DataContracts.Twitter;
 
 namespace EmotionalTweets.ServiceAdapters
 {
     public interface ITwitterApiAdapter
     {
-        Task<TwitterApplicationAuthentication> Login();
-        Task<TweetCollection> Search(string query, string authenticationToken);
+        Task<TwitterAuthentication> Login();
+        Task<TweetCollection> Search(string query, TwitterAuthentication authentication);
     }
 }

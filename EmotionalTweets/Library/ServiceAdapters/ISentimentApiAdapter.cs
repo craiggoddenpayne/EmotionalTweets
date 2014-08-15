@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using EmotionalTweets.DataContracts;
+using EmotionalTweets.DataContracts.Twitter;
 
 namespace EmotionalTweets.ServiceAdapters
 {

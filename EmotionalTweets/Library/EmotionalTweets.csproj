@@ -30,12 +30,14 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DataContracts\TweetCollection.cs" />
-    <Compile Include="DataContracts\TwitterApplicationAuthentication.cs" />
-    <Compile Include="EmotionalTweetsApplication.cs" />
+    <Compile Include="DataContracts\Twitter\Tweet.cs" />
+    <Compile Include="DataContracts\Twitter\TweetCollection.cs" />
+    <Compile Include="DataContracts\Twitter\TwitterAuthentication.cs" />
+    <Compile Include="DataContracts\Twitter\TwitterUser.cs" />
+    <Compile Include="EmotionalTweetsController.cs" />
     <Compile Include="Helpers\IObjectSerializer.cs" />
     <Compile Include="Helpers\ObjectSerializer.cs" />
-    <Compile Include="IEmotionalTweetsApplication.cs" />
+    <Compile Include="IEmotionalTweetsController.cs" />
     <Compile Include="Ioc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestFactory\ITwitterApiRequestFactory.cs" />

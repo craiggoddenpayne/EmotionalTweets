@@ -14,14 +14,14 @@ namespace EmotionalTweetsAndroid
 	    private Button _submit;
 	    private ProgressBar _progress;
 	    private EditText _searchField;
-	    private IEmotionalTweetsApplication _application;
+	    private IEmotionalTweetsController _controller;
 
 	    protected override void OnCreate(Bundle bundle)
 		{
 			RequestWindowFeature(WindowFeatures.NoTitle);
 			base.OnCreate(bundle);
 		    SetContentView(Resource.Layout.EmotionalTweetsSearch);
-            _application = Ioc.Resolve<IEmotionalTweetsApplication>();
+            _controller = Ioc.Resolve<IEmotionalTweetsController>();
 
             _progress = (ProgressBar)FindViewById(Resource.Id.Progress);
 			_searchField = (EditText)FindViewById(Resource.Id.SearchField);

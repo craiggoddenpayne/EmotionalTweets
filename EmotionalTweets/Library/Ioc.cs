@@ -14,7 +14,9 @@ namespace EmotionalTweets
             var container = new ContainerBuilder();
             container.Register<IObjectSerializer>(x => new ObjectSerializer());
 
-            container.Register<IEmotionalTweetsApplication>(x => new EmotionalTweetsApplication());
+            container.Register<IEmotionalTweetsController>(x => new EmotionalTweetsController(
+                x.Resolve<ITwitterApiAdapter>()));
+
             container.Register<ISentimentApiAdapter>(x => new SentimentApiAdapter());
             container.Register<ITwitterApiAdapter>(x => new TwitterApiAdapter(
                 x.Resolve<ITwitterApiRequestFactory>(),

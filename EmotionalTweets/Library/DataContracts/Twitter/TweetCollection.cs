@@ -1,4 +1,4 @@
-﻿namespace EmotionalTweets.DataContracts
+﻿namespace EmotionalTweets.DataContracts.Twitter
 {
     public class TweetCollection
     {
