@@ -21,5 +21,11 @@ namespace EmotionalTweetsTests.Builders
                 user = _user,
             };
         }
+
+        public TweetBuilder WithText(string text)
+        {
+            _text = text;
+            return this;
+        }
     }
 }

@@ -1,6 +1,9 @@
-﻿namespace EmotionalTweets.DataContracts
+﻿using System.Collections.ObjectModel;
+using EmotionalTweets.DataContracts.Sentiment;
+
+namespace EmotionalTweets.DataContracts
 {
-    public class SentimentTweetCollection
+    public class SentimentTweetCollection : Collection<SentimentTweet>
     {
         
     }

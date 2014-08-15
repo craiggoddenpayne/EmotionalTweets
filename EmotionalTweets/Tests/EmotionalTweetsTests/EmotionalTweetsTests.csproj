@@ -31,6 +31,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Builders\Builder.cs" />
+    <Compile Include="Builders\SentimentResponseBuilder.cs" />
+    <Compile Include="Builders\SentimentTweetBuilder.cs" />
     <Compile Include="Builders\TweetBuilder.cs" />
     <Compile Include="Builders\TweetCollectionBuilder.cs" />
     <Compile Include="Builders\TwitterAuthenticationBuilder.cs" />
@@ -45,6 +47,8 @@
     <Compile Include="RequestFactoriesTests\TwitterApiRequestFactoryTests\TwitterApiRequestFactoryTest.cs" />
     <Compile Include="RequestFactoriesTests\TwitterApiRequestFactoryTests\WhenCallingCreateLoginRequest.cs" />
     <Compile Include="RequestFactoriesTests\TwitterApiRequestFactoryTests\WhenCallingCreateSearchTweetsRequest.cs" />
+    <Compile Include="ServiceAdapterTests\SentimentApiAdapterTests\SentimentApiAdapterTest.cs" />
+    <Compile Include="ServiceAdapterTests\SentimentApiAdapterTests\WhenCallingGetSentimentForTweets.cs" />
     <Compile Include="ServiceAdapterTests\TwitterApiAdapterTests\TwitterServiceAdapterTests.cs" />
     <Compile Include="ServiceAdapterTests\TwitterApiAdapterTests\WhenCallingLogin.cs" />
     <Compile Include="ServiceAdapterTests\TwitterApiAdapterTests\WhenCallingSearchTweets.cs" />

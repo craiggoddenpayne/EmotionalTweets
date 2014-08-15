@@ -6,6 +6,6 @@ namespace EmotionalTweets.ServiceAdapters
 {
     public interface ISentimentApiAdapter
     {
-        Task<SentimentTweetCollection> CheckSentimentForTweets(TweetCollection tweetCollection);
+        Task<SentimentTweetCollection> GetSentimentForTweets(TweetCollection tweetCollection);
     }
 }
