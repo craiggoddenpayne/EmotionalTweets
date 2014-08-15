@@ -2,7 +2,7 @@
 using EmotionalTweets.ServiceAdapters;
 using Moq;
 
-namespace EmotionalTweetsTests.EmotionalTweetsController
+namespace EmotionalTweetsTests.EmotionalTweetsControllerTests
 {
     public abstract class EmotionalTweetsControllerTests
     {

@@ -2,6 +2,7 @@
 using EmotionalTweets.DataContracts;
 using EmotionalTweets.DataContracts.Twitter;
 using EmotionalTweets.Helpers;
+using EmotionalTweets.Mappers;
 using EmotionalTweets.RequestFactory;
 using EmotionalTweets.ServiceAdapters;
 using Moq;
@@ -29,7 +30,7 @@ namespace EmotionalTweetsTests.IntegrationTests.EndToEnd
 
             _sentimentApiAdapter = new SentimentApiAdapter(
                 new ObjectSerializer(), new SentimentRequestFactory(),
-                new HttpHelper(), new Mock<ISentimentTweetMapper>().Object);
+                new HttpHelper(), new SentimentTweetMapper());
 
             _sentimentTweets = _sentimentApiAdapter.GetSentimentForTweets(_tweets).Result;
         }

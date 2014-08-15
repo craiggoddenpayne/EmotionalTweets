@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using EmotionalTweets.Helpers;
+using EmotionalTweets.Mappers;
 using EmotionalTweets.RequestFactory;
 using EmotionalTweets.ServiceAdapters;
 

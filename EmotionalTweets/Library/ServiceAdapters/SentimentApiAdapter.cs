@@ -3,6 +3,7 @@ using EmotionalTweets.DataContracts;
 using EmotionalTweets.DataContracts.Sentiment;
 using EmotionalTweets.DataContracts.Twitter;
 using EmotionalTweets.Helpers;
+using EmotionalTweets.Mappers;
 using EmotionalTweets.RequestFactory;
 
 namespace EmotionalTweets.ServiceAdapters
@@ -38,10 +39,5 @@ namespace EmotionalTweets.ServiceAdapters
             }
             return result;
         }
-    }
-
-    public interface ISentimentTweetMapper
-    {
-        SentimentTweet MapFor(SentimentResponse sentiment, Tweet tweet);
     }
 }

@@ -4,7 +4,7 @@ using EmotionalTweets.DataContracts.Twitter;
 using EmotionalTweetsTests.Builders;
 using NUnit.Framework;
 
-namespace EmotionalTweetsTests.EmotionalTweetsController
+namespace EmotionalTweetsTests.EmotionalTweetsControllerTests
 {
     [TestFixture]
     public class WhenCallingSearchTweetsWithSentiment : EmotionalTweetsControllerTests
