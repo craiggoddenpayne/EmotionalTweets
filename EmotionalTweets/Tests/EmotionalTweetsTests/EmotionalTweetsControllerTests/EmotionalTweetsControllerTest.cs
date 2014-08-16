@@ -14,6 +14,8 @@ namespace EmotionalTweetsTests.EmotionalTweetsControllerTests
         public void Initialise()
         {
             TwitterApiAdapter = new Mock<ITwitterApiAdapter>();
+            SentimentApiAdapter = new Mock<ISentimentApiAdapter>();
+            SentimentTweetMapper = new Mock<ISentimentTweetMapper>();
 
             Controller = new EmotionalTweetsController(
                 TwitterApiAdapter.Object,
