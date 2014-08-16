@@ -1,6 +1,6 @@
-﻿using EmotionalTweets.DataContracts.Twitter;
+﻿using EmotionalTweetsShared.DataContracts.Twitter;
 
-namespace EmotionalTweets.DataContracts.Sentiment
+namespace EmotionalTweetsShared.DataContracts.Sentiment
 {
     public class SentimentTweet
     {

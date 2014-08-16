@@ -33,12 +33,14 @@
     <Compile Include="Builders\Builder.cs" />
     <Compile Include="Builders\SentimentResponseBuilder.cs" />
     <Compile Include="Builders\SentimentTweetBuilder.cs" />
+    <Compile Include="Builders\SentimentTweetCollectionBuilder.cs" />
     <Compile Include="Builders\TweetBuilder.cs" />
     <Compile Include="Builders\TweetCollectionBuilder.cs" />
     <Compile Include="Builders\TwitterAuthenticationBuilder.cs" />
     <Compile Include="Builders\TwitterUserBuilder.cs" />
     <Compile Include="EmotionalTweetsControllerTests\EmotionalTweetsControllerTest.cs" />
-    <Compile Include="EmotionalTweetsControllerTests\WhenCallingSearchTweetsWithSentiment.cs" />
+    <Compile Include="EmotionalTweetsControllerTests\WhenCallingGetSentiment.cs" />
+    <Compile Include="EmotionalTweetsControllerTests\WhenCallingSearchTweets.cs" />
     <Compile Include="HelperTests\ObjectSerializerTests\ObjectSerializerTest.cs" />
     <Compile Include="HelperTests\ObjectSerializerTests\WhenCallingDeserialize.cs" />
     <Compile Include="HelperTests\ObjectSerializerTests\WhenCallingDeserializeWithInvalidData.cs" />
@@ -52,7 +54,7 @@
     <Compile Include="RequestFactoriesTests\TwitterApiRequestFactoryTests\WhenCallingCreateLoginRequest.cs" />
     <Compile Include="RequestFactoriesTests\TwitterApiRequestFactoryTests\WhenCallingCreateSearchTweetsRequest.cs" />
     <Compile Include="ServiceAdapterTests\SentimentApiAdapterTests\SentimentApiAdapterTest.cs" />
-    <Compile Include="ServiceAdapterTests\SentimentApiAdapterTests\WhenCallingGetSentimentForTweets.cs" />
+    <Compile Include="ServiceAdapterTests\SentimentApiAdapterTests\WhenCallingGetSentiment.cs" />
     <Compile Include="ServiceAdapterTests\TwitterApiAdapterTests\TwitterServiceAdapterTests.cs" />
     <Compile Include="ServiceAdapterTests\TwitterApiAdapterTests\WhenCallingLogin.cs" />
     <Compile Include="ServiceAdapterTests\TwitterApiAdapterTests\WhenCallingSearchTweets.cs" />
@@ -80,6 +82,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\EmotionalTweetsShared\EmotionalTweetsShared.csproj">
+      <Project>{7050F83A-38C0-4F70-993D-6B958B64CF6F}</Project>
+      <Name>EmotionalTweetsShared</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Library\EmotionalTweets.csproj">
       <Project>{103A65BE-BF74-40CB-9B47-70F8354B2B0F}</Project>
       <Name>EmotionalTweets</Name>

@@ -1,6 +1,6 @@
 ﻿using System.Text;
 using System.Threading.Tasks;
-using EmotionalTweets.DataContracts.Twitter;
+using EmotionalTweetsShared.DataContracts.Twitter;
 using EmotionalTweets.Helpers;
 using EmotionalTweets.RequestFactory;
 

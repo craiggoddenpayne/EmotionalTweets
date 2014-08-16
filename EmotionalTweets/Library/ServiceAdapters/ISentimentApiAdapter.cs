@@ -1,11 +1,11 @@
 ﻿using System.Threading.Tasks;
-using EmotionalTweets.DataContracts;
-using EmotionalTweets.DataContracts.Twitter;
+using EmotionalTweetsShared.DataContracts.Sentiment;
+using EmotionalTweetsShared.DataContracts.Twitter;
 
 namespace EmotionalTweets.ServiceAdapters
 {
     public interface ISentimentApiAdapter
     {
-        Task<SentimentTweetCollection> GetSentimentForTweets(TweetCollection tweetCollection);
+        Task<SentimentResponse> GetSentiment(Tweet tweet);
     }
 }

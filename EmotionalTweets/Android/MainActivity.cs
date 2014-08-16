@@ -36,8 +36,8 @@ namespace EmotionalTweetsAndroid
 	        _progress.Visibility = ViewStates.Visible;
 	        _submit.Enabled = false;
 
-            var sentimentTweets = await _controller.SearchTweetsWithSentiment(_searchField.Text);
-	        EmotionalTweetsApplication.ApplicationState.LastSearch = sentimentTweets;
+            var tweets = await _controller.SearchTweets(_searchField.Text);
+            EmotionalTweetsApplication.ApplicationState.LastSearch = tweets;
 
 	        RunOnUiThread(() =>
 	        {

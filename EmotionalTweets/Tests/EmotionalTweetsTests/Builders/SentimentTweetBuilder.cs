@@ -1,5 +1,4 @@
-﻿using EmotionalTweets.DataContracts;
-using EmotionalTweets.DataContracts.Sentiment;
+﻿using EmotionalTweetsShared.DataContracts.Sentiment;
 
 namespace EmotionalTweetsTests.Builders
 {
@@ -10,16 +9,6 @@ namespace EmotionalTweetsTests.Builders
             return new SentimentTweet
             {
                 
-            };
-        }
-    }
-
-    public class SentimentTweetCollectionBuilder : Builder<SentimentTweetCollectionBuilder, SentimentTweetCollection>
-    {
-        public override SentimentTweetCollection AnInstance()
-        {
-            return new SentimentTweetCollection
-            {
             };
         }
     }

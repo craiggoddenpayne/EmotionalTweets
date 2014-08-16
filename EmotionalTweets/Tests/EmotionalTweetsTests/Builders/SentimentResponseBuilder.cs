@@ -1,4 +1,4 @@
-﻿using EmotionalTweets.DataContracts.Sentiment;
+﻿using EmotionalTweetsShared.DataContracts.Sentiment;
 
 namespace EmotionalTweetsTests.Builders
 {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using EmotionalTweets.DataContracts.Twitter;
+using EmotionalTweetsShared.DataContracts.Twitter;
 
 namespace EmotionalTweetsTests.Builders
 {

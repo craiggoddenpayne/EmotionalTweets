@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmotionalTweetsTests", "Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmotionalTweetsAndroid", "Android\EmotionalTweetsAndroid.csproj", "{27AF5DB8-2161-4C40-B1CA-C48D98E94D91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmotionalTweetsShared", "EmotionalTweetsShared\EmotionalTweetsShared.csproj", "{7050F83A-38C0-4F70-993D-6B958B64CF6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,14 +29,19 @@ Global
 		{103A65BE-BF74-40CB-9B47-70F8354B2B0F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{27AF5DB8-2161-4C40-B1CA-C48D98E94D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{27AF5DB8-2161-4C40-B1CA-C48D98E94D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27AF5DB8-2161-4C40-B1CA-C48D98E94D91}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{27AF5DB8-2161-4C40-B1CA-C48D98E94D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27AF5DB8-2161-4C40-B1CA-C48D98E94D91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7050F83A-38C0-4F70-993D-6B958B64CF6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7050F83A-38C0-4F70-993D-6B958B64CF6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7050F83A-38C0-4F70-993D-6B958B64CF6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7050F83A-38C0-4F70-993D-6B958B64CF6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0B175FC6-418B-4BAF-B0C3-4209AE10C367} = {C6A41C5A-6032-4FF1-90FC-2E0448460FD5}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Library\EmotionalTweets.csproj
+		StartupItem = Android\EmotionalTweetsAndroid.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

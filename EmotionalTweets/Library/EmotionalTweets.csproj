@@ -30,12 +30,6 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DataContracts\Sentiment\SentimentResponse.cs" />
-    <Compile Include="DataContracts\Sentiment\SentimentTweet.cs" />
-    <Compile Include="DataContracts\Twitter\Tweet.cs" />
-    <Compile Include="DataContracts\Twitter\TweetCollection.cs" />
-    <Compile Include="DataContracts\Twitter\TwitterAuthentication.cs" />
-    <Compile Include="DataContracts\Twitter\TwitterUser.cs" />
     <Compile Include="EmotionalTweetsController.cs" />
     <Compile Include="Helpers\IObjectSerializer.cs" />
     <Compile Include="Helpers\ObjectSerializer.cs" />
@@ -50,7 +44,6 @@
     <Compile Include="ServiceAdapters\ISentimentApiAdapter.cs" />
     <Compile Include="Mappers\ISentimentTweetMapper.cs" />
     <Compile Include="ServiceAdapters\ITwitterApiAdapter.cs" />
-    <Compile Include="DataContracts\SentimentTweetCollection.cs" />
     <Compile Include="ServiceAdapters\SentimentApiAdapter.cs" />
     <Compile Include="Mappers\SentimentTweetMapper.cs" />
     <Compile Include="ServiceAdapters\TwitterApiAdapter.cs" />
@@ -68,5 +61,10 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\EmotionalTweetsShared\EmotionalTweetsShared.csproj">
+      <Project>{7050F83A-38C0-4F70-993D-6B958B64CF6F}</Project>
+      <Name>EmotionalTweetsShared</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

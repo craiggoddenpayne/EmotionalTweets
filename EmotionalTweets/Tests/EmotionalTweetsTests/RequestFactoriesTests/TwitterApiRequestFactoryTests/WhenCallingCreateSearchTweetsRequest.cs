@@ -1,5 +1,5 @@
 ﻿using System.Net;
-using EmotionalTweets.DataContracts.Twitter;
+using EmotionalTweetsShared.DataContracts.Twitter;
 using EmotionalTweetsTests.Builders;
 using NUnit.Framework;
 

@@ -1,6 +1,6 @@
 ﻿using System.Net;
 using System.Threading.Tasks;
-using EmotionalTweets.DataContracts.Twitter;
+using EmotionalTweetsShared.DataContracts.Twitter;
 using EmotionalTweetsTests.Builders;
 using Moq;
 using NUnit.Framework;

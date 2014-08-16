@@ -1,4 +1,4 @@
-﻿using EmotionalTweets.DataContracts.Twitter;
+﻿using EmotionalTweetsShared.DataContracts.Twitter;
 
 namespace EmotionalTweetsTests.Builders
 {

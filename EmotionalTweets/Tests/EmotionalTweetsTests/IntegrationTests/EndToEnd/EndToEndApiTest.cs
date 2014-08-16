@@ -1,5 +1,6 @@
-﻿using EmotionalTweets;
-using EmotionalTweets.DataContracts;
+﻿using System.Linq;
+using EmotionalTweets;
+using EmotionalTweetsShared.DataContracts;
 using NUnit.Framework;
 
 namespace EmotionalTweetsTests.IntegrationTests.EndToEnd
@@ -16,7 +17,11 @@ namespace EmotionalTweetsTests.IntegrationTests.EndToEnd
             Ioc.Register();
             var controller = Ioc.Resolve<IEmotionalTweetsController>();
 
-            _sentimentTweets = controller.SearchTweetsWithSentiment("hello").Result;
+            var tweets = controller.SearchTweets("hello").Result;
+
+            _sentimentTweets = new SentimentTweetCollection(
+                tweets.statuses.Select(tweet => controller.GetSentiment(tweet).Result));
+            
         }
 
 

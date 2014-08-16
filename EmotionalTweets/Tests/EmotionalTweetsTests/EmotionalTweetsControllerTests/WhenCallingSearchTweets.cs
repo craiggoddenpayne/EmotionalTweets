@@ -1,19 +1,17 @@
 ﻿using System.Threading.Tasks;
-using EmotionalTweets.DataContracts;
-using EmotionalTweets.DataContracts.Twitter;
+using EmotionalTweetsShared.DataContracts.Twitter;
 using EmotionalTweetsTests.Builders;
 using NUnit.Framework;
 
 namespace EmotionalTweetsTests.EmotionalTweetsControllerTests
 {
     [TestFixture]
-    public class WhenCallingSearchTweetsWithSentiment : EmotionalTweetsControllerTests
+    public class WhenCallingSearchTweets : EmotionalTweetsControllerTests
     {
-        private SentimentTweetCollection _result;
+        private TweetCollection _result;
         private string _query;
         private TwitterAuthentication _twitterAuthorisation;
-        private TweetCollection _tweetResults;
-        private SentimentTweetCollection _sentimentTweetCollection;
+        private TweetCollection _tweetCollection;
 
         [SetUp]
         public void Setup()
@@ -26,17 +24,12 @@ namespace EmotionalTweetsTests.EmotionalTweetsControllerTests
                 .Setup(x => x.Login())
                 .Returns(Task.FromResult(_twitterAuthorisation));
 
-            _tweetResults = TweetCollectionBuilder.Build.AnInstance();
+            _tweetCollection = TweetCollectionBuilder.Build.AnInstance();
             TwitterApiAdapter
                 .Setup(x => x.Search(_query, _twitterAuthorisation))
-                .Returns(Task.FromResult(_tweetResults));
+                .Returns(Task.FromResult(_tweetCollection));
 
-            _sentimentTweetCollection = SentimentTweetCollectionBuilder.Build.AnInstance();
-            SentimentApiAdapter
-                .Setup(x => x.GetSentimentForTweets(_tweetResults))
-                .Returns(Task.FromResult(_sentimentTweetCollection));
-
-            _result = Controller.SearchTweetsWithSentiment(_query).Result;
+            _result = Controller.SearchTweets(_query).Result;
         }
 
         [Test]
@@ -52,15 +45,9 @@ namespace EmotionalTweetsTests.EmotionalTweetsControllerTests
         }
 
         [Test]
-        public void ItShouldCallSentimentService()
-        {
-            SentimentApiAdapter.Verify(x => x.GetSentimentForTweets(_tweetResults));
-        }
-
-        [Test]
         public void ItShouldReturnResult()
         {
-            Assert.That(_result, Is.SameAs(_sentimentTweetCollection));
+            Assert.That(_result, Is.SameAs(_tweetCollection));
         }
     }
 }

@@ -17,7 +17,8 @@ namespace EmotionalTweets
 
             container.Register<IEmotionalTweetsController>(x => new EmotionalTweetsController(
                 x.Resolve<ITwitterApiAdapter>(),
-                x.Resolve<ISentimentApiAdapter>()));
+                x.Resolve<ISentimentApiAdapter>(),
+                x.Resolve<ISentimentTweetMapper>()));
 
             container.Register<ISentimentRequestFactory>(x => new SentimentRequestFactory());
 
@@ -25,8 +26,7 @@ namespace EmotionalTweets
             container.Register<ISentimentApiAdapter>(x => new SentimentApiAdapter(
                 x.Resolve<IObjectSerializer>(),
                 x.Resolve<ISentimentRequestFactory>(),
-                x.Resolve<IHttpHelper>(),
-                x.Resolve<ISentimentTweetMapper>()));
+                x.Resolve<IHttpHelper>()));
 
             container.Register<ITwitterApiAdapter>(x => new TwitterApiAdapter(
                 x.Resolve<ITwitterApiRequestFactory>(),

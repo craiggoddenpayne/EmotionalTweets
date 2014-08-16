@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationState.cs" />
-    <Compile Include="EmotionalTweetsResults.cs" />
+    <Compile Include="EmotionalTweetsResultsActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +67,10 @@
     <Content Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EmotionalTweetsShared\EmotionalTweetsShared.csproj">
+      <Project>{7050F83A-38C0-4F70-993D-6B958B64CF6F}</Project>
+      <Name>EmotionalTweetsShared</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Library\EmotionalTweets.csproj">
       <Project>{103A65BE-BF74-40CB-9B47-70F8354B2B0F}</Project>
       <Name>EmotionalTweets</Name>

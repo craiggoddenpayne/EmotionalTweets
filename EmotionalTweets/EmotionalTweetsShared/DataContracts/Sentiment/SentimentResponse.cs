@@ -1,4 +1,4 @@
-﻿namespace EmotionalTweets.DataContracts.Sentiment
+﻿namespace EmotionalTweetsShared.DataContracts.Sentiment
 {
     public class SentimentResponse
     {

@@ -1,9 +1,9 @@
-using EmotionalTweets.DataContracts;
+using EmotionalTweetsShared.DataContracts.Twitter;
 
 namespace EmotionalTweetsAndroid
 {
     public class ApplicationState
     {
-        public SentimentTweetCollection LastSearch { get; set; }
+        public TweetCollection LastSearch { get; set; }
     }
 }

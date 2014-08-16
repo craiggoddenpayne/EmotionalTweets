@@ -1,4 +1,4 @@
-﻿namespace EmotionalTweets.DataContracts.Twitter
+﻿namespace EmotionalTweetsShared.DataContracts.Twitter
 {
     public class TwitterAuthentication
     {

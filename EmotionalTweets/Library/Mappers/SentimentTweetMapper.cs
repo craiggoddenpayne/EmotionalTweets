@@ -1,5 +1,5 @@
-﻿using EmotionalTweets.DataContracts.Sentiment;
-using EmotionalTweets.DataContracts.Twitter;
+﻿using EmotionalTweetsShared.DataContracts.Sentiment;
+using EmotionalTweetsShared.DataContracts.Twitter;
 
 namespace EmotionalTweets.Mappers
 {

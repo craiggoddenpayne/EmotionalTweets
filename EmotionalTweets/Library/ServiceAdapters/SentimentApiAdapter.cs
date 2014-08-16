@@ -1,9 +1,7 @@
 ﻿using System.Threading.Tasks;
-using EmotionalTweets.DataContracts;
-using EmotionalTweets.DataContracts.Sentiment;
-using EmotionalTweets.DataContracts.Twitter;
+using EmotionalTweetsShared.DataContracts.Sentiment;
+using EmotionalTweetsShared.DataContracts.Twitter;
 using EmotionalTweets.Helpers;
-using EmotionalTweets.Mappers;
 using EmotionalTweets.RequestFactory;
 
 namespace EmotionalTweets.ServiceAdapters
@@ -13,31 +11,22 @@ namespace EmotionalTweets.ServiceAdapters
         private readonly IObjectSerializer _objectSerializer;
         private readonly ISentimentRequestFactory _sentimentRequestFactory;
         private readonly IHttpHelper _httpHelper;
-        private readonly ISentimentTweetMapper _sentimentTweetMapper;
 
         public SentimentApiAdapter(IObjectSerializer objectSerializer,
             ISentimentRequestFactory sentimentRequestFactory,
-            IHttpHelper httpHelper,
-            ISentimentTweetMapper sentimentTweetMapper)
+            IHttpHelper httpHelper)
         {
             _sentimentRequestFactory = sentimentRequestFactory;
             _httpHelper = httpHelper;
-            _sentimentTweetMapper = sentimentTweetMapper;
             _objectSerializer = objectSerializer;
         }
 
-        public async Task<SentimentTweetCollection> GetSentimentForTweets(TweetCollection tweets)
+        public async Task<SentimentResponse> GetSentiment(Tweet tweet)
         {
-            var result = new SentimentTweetCollection(); 
-            foreach (var tweet in tweets.statuses)
-            {
-                var request = _sentimentRequestFactory.CreateSentimentForTweetRequest(tweet);
-                var webResponse = _httpHelper.GetResponse(request);
-                var sentiment = _objectSerializer.DeserializeJson<SentimentResponse>(await webResponse);
-                var sentimentTweet =_sentimentTweetMapper.MapFor(sentiment, tweet);
-                result.Add(sentimentTweet);
-            }
-            return result;
+            var request = _sentimentRequestFactory.CreateSentimentForTweetRequest(tweet);
+            var webResponse = _httpHelper.GetResponse(request);
+            var sentiment = _objectSerializer.DeserializeJson<SentimentResponse>(await webResponse);
+            return sentiment;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using EmotionalTweets;
+using EmotionalTweets.Mappers;
 using EmotionalTweets.ServiceAdapters;
 using Moq;
 
@@ -9,13 +10,15 @@ namespace EmotionalTweetsTests.EmotionalTweetsControllerTests
         public IEmotionalTweetsController Controller { get; set; }
         public Mock<ITwitterApiAdapter> TwitterApiAdapter { get; set; }
         public Mock<ISentimentApiAdapter> SentimentApiAdapter { get; set; }
+        public Mock<ISentimentTweetMapper> SentimentTweetMapper { get; set; }
         public void Initialise()
         {
             TwitterApiAdapter = new Mock<ITwitterApiAdapter>();
 
             Controller = new EmotionalTweetsController(
                 TwitterApiAdapter.Object,
-                SentimentApiAdapter.Object);
+                SentimentApiAdapter.Object,
+                SentimentTweetMapper.Object);
         }   
     }
 }
