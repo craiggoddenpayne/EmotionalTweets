@@ -38,6 +38,10 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.3.5.2\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -46,6 +50,11 @@
   <ItemGroup>
     <Compile Include="ApplicationState.cs" />
     <Compile Include="EmotionalTweetsResultsActivity.cs" />
+    <Compile Include="Helpers\DateTimeParser.cs" />
+    <Compile Include="Helpers\EmoticonResourceFinder.cs" />
+    <Compile Include="Helpers\IDateTimeParser.cs" />
+    <Compile Include="Helpers\IEmoticonResourceFinder.cs" />
+    <Compile Include="IocRegistration.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -53,6 +62,7 @@
     <Compile Include="SentimentTweetCollectionAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
@@ -65,6 +75,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\drawable\Happy.png" />
+    <AndroidResource Include="Resources\drawable\Neutral.png" />
+    <AndroidResource Include="Resources\drawable\Sad.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EmotionalTweetsShared\EmotionalTweetsShared.csproj">

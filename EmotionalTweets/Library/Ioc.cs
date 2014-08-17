@@ -1,41 +1,20 @@
 ﻿using Autofac;
-using EmotionalTweets.Helpers;
-using EmotionalTweets.Mappers;
-using EmotionalTweets.RequestFactory;
-using EmotionalTweets.ServiceAdapters;
 
 namespace EmotionalTweets
 {
     public class Ioc
     {
+        private static readonly ContainerBuilder ContainerBuilder = new ContainerBuilder();
         public static IContainer Container { get; private set; }
 
-        public static void Register()
+        public static ContainerBuilder Builder
         {
-            var container = new ContainerBuilder();
-            container.Register<IObjectSerializer>(x => new ObjectSerializer());
+            get { return ContainerBuilder; }
+        }
 
-            container.Register<IEmotionalTweetsController>(x => new EmotionalTweetsController(
-                x.Resolve<ITwitterApiAdapter>(),
-                x.Resolve<ISentimentApiAdapter>(),
-                x.Resolve<ISentimentTweetMapper>()));
-
-            container.Register<ISentimentRequestFactory>(x => new SentimentRequestFactory());
-
-            container.Register<ISentimentTweetMapper>(x => new SentimentTweetMapper());
-            container.Register<ISentimentApiAdapter>(x => new SentimentApiAdapter(
-                x.Resolve<IObjectSerializer>(),
-                x.Resolve<ISentimentRequestFactory>(),
-                x.Resolve<IHttpHelper>()));
-
-            container.Register<ITwitterApiAdapter>(x => new TwitterApiAdapter(
-                x.Resolve<ITwitterApiRequestFactory>(),
-                x.Resolve<IHttpHelper>(),
-                x.Resolve<IObjectSerializer>()));
-
-            container.Register<ITwitterApiRequestFactory>(x => new TwitterApiRequestFactory());
-            container.Register<IHttpHelper>(x => new HttpHelper());
-            Container = container.Build();
+        public static void Initialise()
+        {
+            Container = ContainerBuilder.Build();
         }
 
         public static TResult Resolve<TResult>()

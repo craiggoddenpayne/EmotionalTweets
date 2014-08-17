@@ -1,14 +1,16 @@
 ﻿using System;
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
 using EmotionalTweets;
+using EmotionalTweetsShared.DataContracts.Twitter;
 
 namespace EmotionalTweetsAndroid
 {
-	[Activity (Label = "EmotionalTweetsAndroid", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "EmotionalTweetsAndroid", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : Activity
 	{
 	    private Button _submit;
@@ -35,19 +37,28 @@ namespace EmotionalTweetsAndroid
 	    {
 	        _progress.Visibility = ViewStates.Visible;
 	        _submit.Enabled = false;
-
-            var tweets = await _controller.SearchTweets(_searchField.Text);
-            EmotionalTweetsApplication.ApplicationState.LastSearch = tweets;
-
-	        RunOnUiThread(() =>
+	        _searchField.Enabled = false;
+	        try
 	        {
-	            _progress.Visibility = ViewStates.Invisible;
-	            _submit.Enabled = true;
-	        });
+	            var tweets = await _controller.SearchTweets(_searchField.Text);
+	            EmotionalTweetsApplication.ApplicationState.LastSearch = tweets;
 
-            var resultsActivity = new Intent(this, typeof(EmotionalTweetsResults));
-            StartActivity(resultsActivity);
-
+	            var resultsActivity = new Intent(this, typeof (EmotionalTweetsResults));
+	            StartActivity(resultsActivity);
+	        }
+	        catch (Exception ex)
+	        {
+	            Toast.MakeText(this, ex.Message, ToastLength.Short).Show();
+	        }
+	        finally
+	        {
+                RunOnUiThread(() =>
+                {
+                    _progress.Visibility = ViewStates.Invisible;
+                    _submit.Enabled = true;
+                    _searchField.Enabled = true;
+                });
+	        }
 	    }
 	}
 }

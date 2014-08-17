@@ -45,10 +45,19 @@ namespace EmotionalTweetsAndroid
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int Happy = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int monoandroidsplash = 2130837505;
+			public const int Icon = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int monoandroidsplash = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int Neutral = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int Sad = 2130837508;
 			
 			static Drawable()
 			{
@@ -63,35 +72,41 @@ namespace EmotionalTweetsAndroid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int Heading = 2131099648;
-			
-			// aapt resource value: 0x7f060004
-			public const int Progress = 2131099652;
-			
-			// aapt resource value: 0x7f060002
-			public const int SearchField = 2131099650;
-			
-			// aapt resource value: 0x7f060009
-			public const int Sentiment = 2131099657;
-			
-			// aapt resource value: 0x7f060003
-			public const int Submit = 2131099651;
-			
-			// aapt resource value: 0x7f060005
-			public const int linearLayout1 = 2131099653;
+			// aapt resource value: 0x7f06000b
+			public const int Emoticon = 2131099659;
 			
 			// aapt resource value: 0x7f060001
-			public const int listView1 = 2131099649;
+			public const int Heading = 2131099649;
 			
-			// aapt resource value: 0x7f060008
-			public const int timestamp = 2131099656;
+			// aapt resource value: 0x7f060002
+			public const int Progress = 2131099650;
 			
-			// aapt resource value: 0x7f060007
-			public const int tweet = 2131099655;
+			// aapt resource value: 0x7f060004
+			public const int SearchField = 2131099652;
+			
+			// aapt resource value: 0x7f060005
+			public const int Submit = 2131099653;
+			
+			// aapt resource value: 0x7f060000
+			public const int linearLayout1 = 2131099648;
 			
 			// aapt resource value: 0x7f060006
-			public const int twitterHandle = 2131099654;
+			public const int linearLayout2 = 2131099654;
+			
+			// aapt resource value: 0x7f06000a
+			public const int linearLayout3 = 2131099658;
+			
+			// aapt resource value: 0x7f060003
+			public const int listView1 = 2131099651;
+			
+			// aapt resource value: 0x7f060009
+			public const int timestamp = 2131099657;
+			
+			// aapt resource value: 0x7f060008
+			public const int tweet = 2131099656;
+			
+			// aapt resource value: 0x7f060007
+			public const int twitterHandle = 2131099655;
 			
 			static Id()
 			{

@@ -35,6 +35,7 @@
     <Compile Include="Helpers\ObjectSerializer.cs" />
     <Compile Include="IEmotionalTweetsController.cs" />
     <Compile Include="Ioc.cs" />
+    <Compile Include="IocRegistration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestFactory\ISentimentRequestFactory.cs" />
     <Compile Include="RequestFactory\ITwitterApiRequestFactory.cs" />

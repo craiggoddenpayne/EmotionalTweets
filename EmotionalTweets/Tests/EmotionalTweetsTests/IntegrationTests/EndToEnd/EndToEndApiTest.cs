@@ -14,7 +14,8 @@ namespace EmotionalTweetsTests.IntegrationTests.EndToEnd
         [SetUp]
         public void Setup()
         {
-            Ioc.Register();
+            IocRegistration.Register();
+            Ioc.Initialise();
             var controller = Ioc.Resolve<IEmotionalTweetsController>();
 
             var tweets = controller.SearchTweets("hello").Result;

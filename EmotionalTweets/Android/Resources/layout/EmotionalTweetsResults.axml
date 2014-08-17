@@ -5,15 +5,27 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:padding="5dp">
-    <TextView
-        android:id="@+id/Heading"
-        android:text="Emotional Tweets"
-        android:layout_width="fill_parent"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:padding="5dp"
-        android:gravity="center_horizontal" />
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:id="@+id/Heading"
+            android:text="Emotional Tweets"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <ProgressBar
+            android:id="@+id/Progress"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </LinearLayout>
     <ListView
         android:minWidth="25px"
         android:minHeight="25px"

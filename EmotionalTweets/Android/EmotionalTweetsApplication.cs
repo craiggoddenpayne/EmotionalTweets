@@ -19,7 +19,10 @@ namespace EmotionalTweetsAndroid
         {
             base.OnCreate();
             ApplicationState = new ApplicationState();
-            Ioc.Register();
+            
+            EmotionalTweets.IocRegistration.Register();
+            EmotionalTweetsAndroid.IocRegistration.RegisterAndroidTypes();
+            Ioc.Initialise();
         }
     }
 }
