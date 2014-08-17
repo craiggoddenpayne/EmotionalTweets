@@ -24,19 +24,22 @@
                 android:id="@+id/twitterHandle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#CCFFFF" />
+                android:textColor="#CCFFFF"
+                android:padding="10dp" />
             <TextView
                 android:text="Tweet"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/tweet"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:padding="10dp" />
             <TextView
                 android:text="timestamp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:id="@+id/timestamp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:padding="10dp" />
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
@@ -45,12 +48,14 @@
             android:layout_height="match_parent"
             android:layout_width="0dip"
             android:layout_weight=".20"
-            android:id="@+id/linearLayout3">
+            android:id="@+id/linearLayout3"
+            android:gravity="center_vertical">
             <ImageView
                 android:src="@android:drawable/ic_menu_gallery"
                 android:id="@+id/Emoticon"
                 android:layout_width="100px"
-                android:layout_height="100px" />
+                android:layout_height="100px"
+                android:padding="5dp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
